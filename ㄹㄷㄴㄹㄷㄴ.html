@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+    <title>스파르타코딩클럽 | 과제 짭짤한 맛</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+
+    <style>
+        * {
+            font-family: 'Gamja Flower', cursive;
+        }
+
+        .wrap {
+            margin: 0px auto;
+            width: 500px;
+        }
+
+        .img {
+            background-image: url('https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MX2P2_VW_PF+watch-40-stainless-black-cell-hermes5s_VW_PF_WF_CO?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&op_usm=0.5,0.5&.v=1566450043761,1567126783841');
+            background-size: cover;
+            background-position: center;
+            width: 500px;
+            height: 500px;
+            margin: 0px auto;
+
+        }
+
+        .price {
+            font-size: 16px;
+        }
+
+        .describe {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+    <script>
+        function order() {
+            alert('주문이 완료되었습니다!')
+        }
+    </script>
+
+</head>
+
+<body>
+<div class="wrap">
+    <div class="img"></div>
+    <div class="describe">
+        <h3>
+            Apple Watch Hermes <span class="price">1,499,000원부터</span>
+        </h3>
+        <p>
+            다채로운 Hermès 케이스와 밴드, 상시표시형 Retina 디스플레이에 맞게 디자인된 페이스까지. 세련미 넘치는 Apple Watch Hermès는 스타일리시한 현대인을 위한 궁극의
+            도구입니다. </p>
+    </div>
+
+    <div class="order-box">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">주문자 이름</span>
+            </div>
+            <input type="text" class="form-control" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--수량을 선택하세요--</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">주소</span>
+            </div>
+            <input type="text" class="form-control" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">전화번호</span>
+            </div>
+            <input type="text" class="form-control" aria-describedby="basic-addon1">
+        </div>
+        <button onclick="order()" type="button" class="btn btn-primary btn-lg btn-block">주문하기</button>
+    </div>
+</div>
+
+
+</body>
+
+</html>

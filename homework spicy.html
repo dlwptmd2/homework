@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>숙제 매운맛 5번쨰</title>
+    <!--    부트스트랩 설정-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <!--    부트스트랩 설정 끝-->
+    <!--    글씨체 넣기-->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!--    스타일 설정-->
+    <style>
+        /*전체적으로 위에 공간이 남게 설정*/
+        * {
+            width: 900px;
+            margin: 20px auto;
+            font-size: 30px;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        .jakgehae {
+            padding-right: 400px;
+            width: 500px
+
+
+        }
+
+        /*모든 h1이 크고 굵은 글자가 되게 설정*/
+        h1 {
+            font-weight: bolder;
+            font-size: 70px;
+        }
+
+        /*첫번째 구역에 사진넣기*/
+        .mainpic {
+            border-radius: 20px;
+        }
+
+    </style>
+    <!--    스타일 설정 끝-->
+<!--    버튼누르면 주문감사합니다 출력-->
+    <script>
+        function Thanksman() {
+            alert('주문감사합니다. 맥북사는 그날까지!!')
+        }
+    </script>
+
+</head>
+<body>
+<!--첫번째 구역설정-->
+<div class="mainpic">
+    <img src="https://lh3.googleusercontent.com/proxy/mYxx2zIz1ai_0yKl2HEy_TGAb0My2Bt8XqN7cFE3Hoc3zBi3ZJNwKPEkVoA6hxbt6oV3G5Wq7DhJfK7eUK2iNp7-mAfXsRmWkTlCmMwsGQRo3p6i48GM1vI5Rv-cPucRR6NeywJ01qzHH4d_3sT_clS3TLGgL8VZWAkOSQ0_12LTdEth8dqq1DTyqw51EF0b62ow3wzULgrJ3UJFRFj5TXi1jkMhUFLuiysqZgC7eQg5ycA_9Khof-q1p0xO65G9VelZGz8EWFbwwReafj0yiUn8FlNOkcmEPfOIIS7iAZ-N1pwJRv2Zu-Vi9kVsjeIAg6sCmoHjS4vu8h-FGNZ_1QK0eOuXSAZ9aPeCbzA"
+    <!--그림크기를 어떻게 줄일수 있을까-->
+
+
+</div>
+<!--첫번째 구역설정 끝-->
+
+<!--두번째 구역설정-->
+<div>
+    <h1> 맛깔나게 구운파 <span style="font-size: 45px; font-weight: normal">단돈 32500원!!! </span></h1>
+    <p style="margin-top: 40px; margin-bottom: 40px"> 바비큐에 빠질 수 없는 구운 파.아 이게 왜 안되는거지 왜 이렇게 큰거야 아오 쫌 빡치네 여러개 선택하는건 왜 자꾸 씹히는 거지 뭐하는거지 이</p>
+    <h1>주문하기</h1>
+    <div class="jakgehae">
+        <!--        작게해로 정해서 네모 빈칸 줄일라 했는데 왜 안되지 왜지...-->
+        <p>주문자 성함:<input type="text">
+        </p>
+        <p>수량 이거 하,, <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" href="#"> 1개 </a>
+      <a class="dropdown-item" href="#"> 2개 </a>
+    </div></p>
+        <p>주소 <input type="text"></p>
+        <p>전회번호 <input type="text"</p>
+        <p>
+<!--                버튼 누르면 감사인사 출력-->
+            <button onclick="Thanksman" type="button" class="btn btn-success" style="margin: 20px 40%; width: 200px">
+                주문하기 </button>
+        </p>
+
+    </div>
+</div>
+
+<!--두번째 구역설정 끝-->
+</body>
+</html>
+
+
+<!--먼저 내 사진 크기지우는거 실패
+둘쨰 사진 테두리 둥글게 실패
+셋쨰 왤케 내 주문선택창 네모가 길어지는 거지
+넷쨰 왜 내 버튼 누르면 주문 감사합니다 안뜨지
+다섯쨰 전체적으로 크기를 줄이는 방법은 나-->
