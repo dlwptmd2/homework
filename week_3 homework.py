@@ -22,11 +22,17 @@ for song in songs:
     if a_tag is not None:
         # a의 text를 찍어본다.
         title = a_tag.text  # a 태그 사이의 텍스트를 가져오기
-        rank = song.select_one('td.number')
+        rank = song.select_one('td.number').text[0:2].strip()
+        # 어떻게 오직 숫자만 출력할 수 있을까#아 저 [0:2}가 어디부터 어디까지 만 인쇄하라 그런 뜻인가 보네
+        artist = song.select_one('td.info > a.artist.ellipsis').text
+        #artist= song.select_one('a.artist ellipsis').text 이건 아니야 왤까 그나저나
+        #뒤에 붙은 .text는 안에 있는 텍스트를 추출한다는 의미인가?
+        #구글 크롬 콘솔 돌려보니 하단에 뜨는거 그대로 쓰면 되네 띄어쓰기 대신에 .요걸로 이어 놨어
+        #그래도 모양이 안이뻐 어카지 strip얼른 써볼까
 
 
-          # 어떻게 오직 숫자만 출력할 수 있을까
-        print(rank, a_tag.text)
+
+        print(rank, a_tag.text, artist)
           # td 태그 사이의 텍스트를 가져오기
 
 
