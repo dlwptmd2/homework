@@ -46,10 +46,13 @@ for song in songs:
 #몽고디비에 넣을때 프린트를 굳이 꺼야 하나???
         #print(rank, title, artist)
         doc = {
-            'title':title
-            'rank':rank
-            'artist':artist
+            'title':title,
+            'ranking':rank,
+            'artist':artist,
         }
+        #아 설마 타이틀, 랭크, 아트스트 사이에 콤마를 안붙여서 인가????
+        # ''안에 있는 글자를 바꾸는건 문제가 없겠지? 몽고 디비에 저장되는 이름일테니?
+        #맞네 !!!!!! 위랑 위 위에 대한 질문 다 정답은 이응이야 맞아 콤마 붙여야 했고 따옴펴안 글자는 디비 저장 카테고리 네임이야
         db.songs.insert_one(doc)
 
 
