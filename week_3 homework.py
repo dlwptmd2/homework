@@ -18,15 +18,18 @@ songs = soup.select('#body-content > div > div > table > tbody > tr')
 # movies (tr들) 의 반복문을 돌리기
 for song in songs:
     # movie 안에 a 가 있으면,
-    a_tag = song.select_one(' tr > td > a')
+    a_tag = song.select_one('td.info > a')
     if a_tag is not None:
         # a의 text를 찍어본다.
-
-        rank = song.select_one('tr:nth-child(1) > td')['number']  # img 태그의 alt 속성값을 가져오기
         title = a_tag.text  # a 태그 사이의 텍스트를 가져오기
+        rank = song.select_one('td.number')
+
+
+          # 어떻게 오직 숫자만 출력할 수 있을까
+        print(rank, a_tag.text)
           # td 태그 사이의 텍스트를 가져오기
 
-        print(a_tag.text)
+
 
 
 
