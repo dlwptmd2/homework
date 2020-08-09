@@ -59,37 +59,88 @@
         </style>
 
         <script>
+             $(document).ready(function () {
+                $("#orders-box").html("");
+                showOrders();
+            });
+
+            //위에 저걸 까먹었네
             function order() {
 
                 // 여기에 코드를 작성하세요.
                 // 1-1. 이름(order-name) 부분의 값을 가져오고
                 let personName = $('#order-name').val();
+                let howMany = $('#order-count').val();
+                let address = $('#order-address').val();
+                let phoneNumb = $('#order-phone').val();
+
                 if (personName == '') {
                     alert('이름을 입력하세요.')
-                }
-                ;
-
-                // 1-2. 만약에 빈 칸이면 alert을 띄워주세요.
-
-                // 2-1. 수량(order-count) 부분의 값을 가져오고
-                let howMany = $('#order-count').val();
-                if (howMany == '') {
+                } else if (howMany == '') {
                     alert('수량을 입력하세요.')
                 }
-                ;
+
                 // 2-2. 만약에 빈 칸이면 alert을 띄워주세요.
-                let address = $('#order-address').val();
-                if (address == '') {
+                else if (address == '') {
                     alert('주소를 입력하세요.')
-                }
-                ;
-
-
-                let phoneNumb = $('#order-phone').val();
-                if (phoneNumb == '') {
+                } else if (phoneNumb == '') {
                     alert('번호를 입력하세요.')
                 }
-                ;
+                ;// if else뒤에 굳이 ;안붙여도 돼!!!
+
+                //여기에 에이잭스 추가해야지
+                // 3. POST /review 에 저장(Create)을 요청합니다.
+                $.ajax({
+                    type: "POST",
+                    url: "/order",
+                    data: {
+                        name_give: personName,
+                        Howmany_give: howMany,
+                        address_give: address,
+                        phoneNumb_give: phoneNumb
+                    },
+                    success: function (response) {
+                        if (response["result"] == "success") {
+                            alert(response["msg"]);
+                            window.location.reload();
+                        }
+                    }
+                })
+
+                   //주문한거 목록보기 (Read)
+                function showOrders() {
+                    // 1. 주문 목록을 서버에 요청하기 ########################
+                    ///////////아니 왜 내 쇼 올덜스 안살아나 시발
+                    $.ajax({
+                        type: "GET",
+                        url: "/orders",
+                        data: {},
+                        success: function (response) {
+                            // 2. 요청 성공 여부 확인하기
+                            if (response["result"] == "success") {
+                                let orders = order["DBorders"];
+                                // 3. 요청 성공했을 때 리뷰를 올바르게 화면에 나타내기
+                                for (let i = 0; i < orders.length; i++) {
+                                    makeCard(orders[i]["personName"], orders[i]["howMany"], orders[i]["address"],orders[i]["phoneNumb"]);
+                                }
+                            } else {
+                                alert("리뷰를 받아오지 못했습니다");
+                            }
+                        }
+                    })
+                }
+
+
+                function makeCard(personName, howMany, address, phoneNumb){
+                    let tempHtml = `<tr>
+                        <td>${personName}</td>
+                        <td>${howMany}</td>
+                        <td>${address}</td>
+                        <td>${phoneNumb}</td>
+                    </tr>`;
+                    $("#orders-box").append(tempHtml);
+                }
+
 
             }
 
